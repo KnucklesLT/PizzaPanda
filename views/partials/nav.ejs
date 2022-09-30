@@ -5,12 +5,13 @@
 <body>
   <nav>
     <% if (user) { %>
-      <a href="/"></a>
       <a href="/auth/logout" class="right">
         <button type="submit">Logout</button>
       </a>
-    <% } else { %>
+      <% } else { %>
+      <a href="/meals" class="right">All Meals</a>
       <div 
+        class="right"
         id="g_id_onload"
         data-client_id="<%= googleClientID %>"
         data-login_uri="/auth/google"
