@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const daySchema = new Schema({
   date: {
-    Date, 
-    required,
+    tyep: Date, 
+    required: true,
   },
   breakfast: { 
     type: Schema.Types.ObjectId, 

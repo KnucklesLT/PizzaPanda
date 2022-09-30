@@ -8,8 +8,27 @@ function index(req,res) {
       title: 'All Meals'
     })
   })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+
+function newMeal(req, res) {
+  res.render('meals/new', {
+    title: 'Add Meal'
+  })
+}
+
+
+function create(req,res) {
+  // req.body.creator = req.user.profile._id
+
 }
 
 export {
-  index
+  index,
+  newMeal as new,
+  create,
 }

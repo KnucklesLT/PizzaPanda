@@ -4,17 +4,17 @@ const Schema = mongoose.Schema
 
 const mealSchema = new Schema({
   name: {
-    String, 
-    // required,
+    type: String, 
+    required: true,
   },
   mealType: {
-    String, 
+    type: String, 
     enum: ['Breakfast','Lunch','Dinner','Snack'],
-    // required,
+    required: true,
   }, 
   description: {
-    String,
-    // required
+    type: String,
+    required:true,
   },
   creator: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {

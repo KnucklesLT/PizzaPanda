@@ -42,6 +42,7 @@ h1 {
 }
 
 h2 {
+  margin-top: 30px;
   font-size: 30px;
 }
 
@@ -66,7 +67,7 @@ section {
 }
 
 a {
-  color: #00B7FF;
+  color: red;
 }
 
 pre {
@@ -83,9 +84,6 @@ nav > a,
   justify-content: flex-end;
 }
 
-.btn {
-  margin: 16px 0;
-}
 
 .link {
   padding: 10px 0;
@@ -95,4 +93,22 @@ nav > a,
 
 .profile-avatar {
   margin-top: 50px;
+}
+
+form {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 352px));
+  font-size: 20px;
+}
+
+form * {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.btn {
+  display: inline-flex;
+  margin: auto;
 }
