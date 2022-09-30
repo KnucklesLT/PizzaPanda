@@ -10,6 +10,7 @@ router.get('/new', mealsCtrl.new)
 
 router.post('/', isLoggedIn, mealsCtrl.create)
 
+router.delete('/:id', isLoggedIn, mealsCtrl.delete)
 export {
   router
 }

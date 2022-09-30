@@ -37,8 +37,29 @@ function create(req,res) {
   })
 }
 
+
+function deleteMeal(req,res) {
+  Meal.findById(req.params.id)
+  .then(meal => {
+    if (meal.creator.equals(req.user.profile._id)){
+      meal.delete()
+      .then(deletedMeal => {
+        res.redirect(`/meals`)
+      })
+    } else {
+      throw new Error('NOT AUTHORIZED')
+    }
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/meals')
+  })
+}
+
 export {
   index,
   newMeal as new,
   create,
+  deleteMeal as delete,
+
 }
