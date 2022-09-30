@@ -18,16 +18,17 @@
   <% meals.forEach(meal => { %>
     <div class="card" style="width: 18rem;">
       <div class="card-body">
+        <form action="/meals/<%= meal._id %>?_method=DELETE" method="post">
+          <button type="submit" class="delete-btn">X</button>
+        </form>
         <h5 class="card-title"><%= meal.name %> </h5>
         <h6 class="card-subtitle mb-2 text-muted"><%= meal.mealType %> </h6>
         <p class="card-text"><%= meal.description %></p>
         <% if (meal.creator.equals(user?.profile._id)) { %>
-          <a href="/meals/<%= meal._id %>/edit" class="card-link">
+          <a href="/meals/<%= meal._id %>/edit" class="card-link btn">
             <button class="btn">Edit this Meal</button>
           </a>
-          <form action="/meals/<%= meal._id %>?_method=DELETE" method="post">
-            <button type="submit" class="btn">Delete Meal</button>
-          </form>
+          
         <% } %>
       </div>
     </div>

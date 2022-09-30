@@ -23,8 +23,18 @@ function newMeal(req, res) {
 
 
 function create(req,res) {
-  // req.body.creator = req.user.profile._id
-
+  req.body.creator = req.user.profile._id
+  for(let key in req.body){
+    if(req.body[key] === '') delete req.body[key]
+  }
+  Meal.create(req.body)
+  .then(meal => {
+    res.redirect('/meals')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('meals')
+  })
 }
 
 export {

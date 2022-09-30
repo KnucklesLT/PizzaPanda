@@ -98,7 +98,7 @@ nav > a,
 form {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 352px));
+  /* grid-template-columns: repeat(2, minmax(auto, 352px)); */
   font-size: 20px;
 }
 
@@ -109,6 +109,21 @@ form * {
 }
 
 .btn {
-  display: inline-flex;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* margin: auto; */
+}
+.card-body{
+  padding: 5px;
   margin: auto;
+  color: black;
+}
+
+form > button {
+  /* grid-column: span 2; */
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  font-size: 15px;
 }
