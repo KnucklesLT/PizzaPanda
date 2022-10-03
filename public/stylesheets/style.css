@@ -32,12 +32,17 @@ nav {
 
 main {
   display: flex;
-  /* place-items: center;
-  min-height: 100vh;
-  position: relative; */
-  align-items: center;
-  justify-content: center;
+  place-items: center;
+  /* min-height: 100vh; */
+  /* position: relative; */
+  /* align-items: center; */
+  /* justify-content: center; */
   flex-direction: column;
+}
+section{
+  background-color: black;
+  padding: 0px;
+  margin: 0px;
 }
 
 h1 {
@@ -83,7 +88,7 @@ nav > a,
   margin: 10px 30px;
   text-decoration: none;
   font-size: 24px;
-  display: flex;
+  /* display: flex; */
   align-items:flex-end;
   justify-content: flex-end;
 }
@@ -129,10 +134,32 @@ form * {
   display: inline-block;
 }
 
+#card-container{
+  /* display: flex; */
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+	/* width: 100%; */
+}
+
+@media only screen and (min-width: 768px) {
+  #card-container{
+    width: 325px;
+    margin: 30px 15px 0;
+  }
+}
+
 form > button {
   /* grid-column: span 2; */
   width: auto;
   height: auto;
   margin-left: auto;
   font-size: 15px;
+}
+
+#logo{
+  object-fit: contain;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
 }
