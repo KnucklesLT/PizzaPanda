@@ -3,14 +3,14 @@
 
 <main>
   <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
+  <!-- <% if (user?.profile.avatar) { %>
     <div>
       <img
         src="<%= user.profile.avatar %>"
         alt="<%= user.profile.name %> avatar"
       />
     </div>
-  <% } %>
+  <% } %> -->
 
   <h1>All Meals</h1>
   <h2>Added by our wonderful members!</h2>
@@ -22,10 +22,11 @@
           <form action="/meals/<%= meal._id %>?_method=DELETE" method="post">
             <button type="submit" class="delete-btn">X</button>
           </form>
-        <% } %>
-        <h5 class="card-title"><%= meal.name %> </h5>
-        <h6 class="card-subtitle mb-2 text-muted"><%= meal.mealType %> </h6>
-        <p class="card-text"><%= meal.description %></p>
+          <% } %>
+          <h5 class="card-title"><%= meal.name %> </h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= meal.mealType %> </h6>
+          <p class="card-text"><%= meal.description %></p>
+          <p>By: <%= meal.creator.name %></p>
         <% if (meal.creator.equals(user?.profile._id)) { %>
           <a href="/meals/<%= meal._id %>/edit" class="card-link btn">
             <button class="btn">Edit this Meal</button>

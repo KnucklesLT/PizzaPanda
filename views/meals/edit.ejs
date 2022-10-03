@@ -11,8 +11,8 @@
     <label>
       Type of Meal:
       <select name="mealType">
-        <option value="<%= meal.mealType %>"><%= meal.mealType %></option>
-        <option value="Breakfast" selected>Breakfast</option>
+        <option value="<%= meal.mealType %>" selected><%= meal.mealType %></option>
+        <option value="Breakfast">Breakfast</option>
         <option value="Lunch">Lunch</option>
         <option value="Dinner">Dinner</option>
         <option value="Snack">Snack</option>
@@ -22,7 +22,7 @@
       Meal Description:
       <textarea name="description" cols="40" rows="2" placeholder="describe the meal..."><%= meal.description %></textarea>
     </label>
-    <button type="submit" class="btn btn-danger">EditMeal</button>
+    <button type="submit" class="btn btn-danger">Edit Meal</button>
   </form>
 </section>
 

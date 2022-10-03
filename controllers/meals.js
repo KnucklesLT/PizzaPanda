@@ -72,11 +72,30 @@ function edit(req,res) {
   })
 }
 
+
+function update(req,res) {
+  Meal.findById(req.params.id)
+  .then(meal => {
+    if (meal.creator.equals(req.user.profile._id)){
+      meal.updateOne(req.body)
+      .then(updatedMeal => {
+        res.redirect(`/meals`)
+      })
+    } else {
+      throw new Error('Not Authorized')
+    }
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect('/meals')
+  })
+}
+
 export {
   index,
   newMeal as new,
   create,
   deleteMeal as delete,
   edit,
-
+  update,
 }
