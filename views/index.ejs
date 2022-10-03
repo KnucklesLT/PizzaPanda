@@ -1,15 +1,15 @@
 <%- include('./partials/html-head') %>
 <%- include('./partials/nav') %>
 <script>
-  document.addEventListener('mousemove', (e) => {
-    const mouseX = e.clientX
-    const mouseY = e.clientY
-    const anchor = document.getElementById('anchor')
-    const rekt = anchor.getBoundingClientRect()
-    const anchorX = rekt.left + rekt.width / 2
-    const anchorY = rekt.top + rekt.height / 2
+  document.addEventListener('mousemove', (event) => {
+    const mouseX = event.clientX
+    const mouseY = event.clientY
+    const picture = document.getElementById('picture')
+    const rect = picture.getBoundingClientRect()
+    const pictureX = rect.left + rect.width / 2
+    const pictureY = rect.top + rect.height / 2
 
-    const angleDeg = angle(mouseX, mouseY, anchorX, anchorY)
+    const angleDeg = angle(mouseX, mouseY, pictureX, pictureY)
 
     const eyes = document.querySelectorAll('.eyes')
     eyes.forEach(eye => {
@@ -38,7 +38,7 @@
   <% } %>
 
   <section class="panda">
-    <img id="anchor" src="/img/wide_eye_panda_with_weights.jpg" alt="Panda holding weights">
+    <img id="picture" src="/img/wide_eye_panda_with_weights.jpg" alt="Panda holding weights">
     <div id="eyes">
       <img class="eyes" src="/img/panda_eye.png" alt="panda eye" style="top:-794px; right:-461px;">
       <img class="eyes" src="/img/panda_eye.png" alt="panda eye" style="top:-789px; right:-703px;">
