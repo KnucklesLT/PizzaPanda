@@ -2,6 +2,7 @@ import { Meal } from "../models/meal.js"
 
 function index(req,res) {
   Meal.find({})
+  .populate('creator')
   .then(meals => {
     res.render('meals/index', {
       meals,
@@ -56,10 +57,26 @@ function deleteMeal(req,res) {
   })
 }
 
+
+function edit(req,res) {
+  Meal.findById(req.params.id)
+  .then(meal => {
+    res.render('meals/edit',{
+      meal,
+      title: "Edit Meal"
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/meals')
+  })
+}
+
 export {
   index,
   newMeal as new,
   create,
   deleteMeal as delete,
+  edit,
 
 }

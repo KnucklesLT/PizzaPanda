@@ -6,11 +6,16 @@ const router = Router()
 
 router.get('/', mealsCtrl.index)
 
-router.get('/new', mealsCtrl.new)
+router.get('/new', isLoggedIn,mealsCtrl.new)
+
+router.get('/:id/edit', isLoggedIn, mealsCtrl.edit)
 
 router.post('/', isLoggedIn, mealsCtrl.create)
 
 router.delete('/:id', isLoggedIn, mealsCtrl.delete)
+
+
+
 export {
   router
 }

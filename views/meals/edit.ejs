@@ -1,0 +1,29 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h2>Edit Meal</h2>
+  <form action="/meals/<%= meal._id %>?_method=PUT" method="post" autocomplete="off">
+    <label>
+      Name:
+      <input type="text" name="name"  value="<%= meal.name %> ">
+    </label>
+    <label>
+      Type of Meal:
+      <select name="mealType">
+        <option value="<%= meal.mealType %>"><%= meal.mealType %></option>
+        <option value="Breakfast" selected>Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Snack">Snack</option>
+      </select>
+    </label>
+    <label>
+      Meal Description:
+      <textarea name="description" cols="40" rows="2" placeholder="describe the meal..."><%= meal.description %></textarea>
+    </label>
+    <button type="submit" class="btn btn-danger">EditMeal</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>

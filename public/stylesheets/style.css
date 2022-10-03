@@ -32,6 +32,9 @@ nav {
 
 main {
   display: flex;
+  /* place-items: center;
+  min-height: 100vh;
+  position: relative; */
   align-items: center;
   justify-content: center;
   flex-direction: column;
