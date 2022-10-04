@@ -10,6 +10,8 @@ router.get('/new', isLoggedIn, daysCtrl.new)
 
 router.post('/', isLoggedIn, daysCtrl.create)
 
+router.delete('/:id', isLoggedIn, daysCtrl.delete)
+
 export {
   router
 }

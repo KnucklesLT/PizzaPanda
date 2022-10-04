@@ -51,7 +51,6 @@ function create(req,res) {
     .then(day => {
       profile.plan.push(day)
       profile.save()
-      console.log(day)
       res.redirect('/days')
     })
 
@@ -62,8 +61,25 @@ function create(req,res) {
   })
 }
 
+function deletePlan(req,res) {
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.plan.remove({_id: req.params.id})
+    profile.save()
+    .then(() => {
+      res.redirect('/days')
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
 export{
   index,
   newPlan as new,
   create,
+  deletePlan as delete,
+
 }
