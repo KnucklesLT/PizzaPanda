@@ -1,3 +1,4 @@
+import { Types } from "mongoose"
 import { Day } from "../models/day.js"
 import { Meal } from "../models/meal.js"
 import { Profile } from "../models/profile.js"
@@ -7,6 +8,11 @@ function index(req,res) {
   .populate({
     path: 'plan', 
     model: 'Day',
+    options:{
+      sort: {
+        date: 1
+      }
+    },
     populate: {
       path: 'breakfast lunch dinner snack',
       model: 'Meal'
@@ -18,19 +24,10 @@ function index(req,res) {
       profile
     })
   })
-  // Day.find({}).sort({ date : 1})
-  // .populate('breakfast lunch dinner snack')
-  // .then(days => {
-  //   res.render('days/index', {
-  //     title: 'View Planner',
-  //     days,
-  //     isSelf,
-  //   })
-  // })
-  // .catch(error => {
-  //   console.log(error)
-  //   res.redirect('/')
-  // })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
 }
 
 function newPlan(req, res) {
