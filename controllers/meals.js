@@ -3,6 +3,7 @@ import { Meal } from "../models/meal.js"
 function index(req,res) {
   Meal.find({})
   .populate('creator')
+  .sort({mealType:1})
   .then(meals => {
     res.render('meals/index', {
       meals,
