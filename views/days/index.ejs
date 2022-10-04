@@ -6,7 +6,23 @@
   <h1>Your Daily Meal Plan</h1>
   <h3><a href="/days/new">Add a Day</a></h3>
   
-
+  <section class="card">
+    <% days.forEach(day => { %>
+      <div id="card-container" class="card" style="width: 18rem;">
+        <div class="card-body">
+          
+            <h5 class="card-title"><%= day.date %> </h5>
+            <h6 class="card-subtitle mb-2 text-muted">Breakfast:</h6>
+            <p class="card-text"><%= day.breakfast.name %></p>
+            <h6 class="card-subtitle mb-2 text-muted">Lunch:</h6>
+            <p class="card-text"><%= day.lunch.name %></p>
+            <h6 class="card-subtitle mb-2 text-muted">Dinner:</h6>
+            <p class="card-text"><%= day.dinner.name %></p>
+            <h6 class="card-subtitle mb-2 text-muted">Snack:</h6>
+            <p class="card-text"><%= day.snack.name %></p>
+        </div>
+      </div>
+    <% }) %>
 </main>
 
 <%- include('../partials/footer') %>
