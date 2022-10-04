@@ -30,14 +30,6 @@
   <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
   <h2 style="color: red;">Pizza Panda sees all and knows all.</h2>
   <h3>Let Pizza Panda help you stay in shape.</h3>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
 
   <section class="panda">
     <img id="picture" src="/img/wide_eye_panda_with_weights.jpg" alt="Panda holding weights">

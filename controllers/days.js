@@ -3,18 +3,34 @@ import { Meal } from "../models/meal.js"
 import { Profile } from "../models/profile.js"
 
 function index(req,res) {
-  Day.find({}).sort({ date : 1})
-  .populate('breakfast lunch dinner snack')
-  .then(days => {
+  Profile.findById(req.user.profile._id)
+  .populate({
+    path: 'plan', 
+    model: 'Day',
+    populate: {
+      path: 'breakfast lunch dinner snack',
+      model: 'Meal'
+    }
+  })
+  .then(profile => {
     res.render('days/index', {
       title: 'View Planner',
-      days,
+      profile
     })
   })
-  .catch(error => {
-    console.log(error)
-    res.redirect('/')
-  })
+  // Day.find({}).sort({ date : 1})
+  // .populate('breakfast lunch dinner snack')
+  // .then(days => {
+  //   res.render('days/index', {
+  //     title: 'View Planner',
+  //     days,
+  //     isSelf,
+  //   })
+  // })
+  // .catch(error => {
+  //   console.log(error)
+  //   res.redirect('/')
+  // })
 }
 
 function newPlan(req, res) {
@@ -32,10 +48,16 @@ function newPlan(req, res) {
 }
 
 function create(req,res) {
-  Day.create(req.body)
-  .then(day => {
-    console.log(day)
-    res.redirect('/days')
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    Day.create(req.body)
+    .then(day => {
+      profile.plan.push(day)
+      profile.save()
+      console.log(day)
+      res.redirect('/days')
+    })
+
   })
   .catch(error => {
     console.log(error)

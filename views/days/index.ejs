@@ -7,11 +7,15 @@
   <h3><a href="/days/new">Add a Day</a></h3>
   
   <section class="card">
-    <% days.forEach(day => { %>
+    <% profile.plan.forEach(day => { %>
       <div id="card-container" class="card" style="width: 18rem;">
         <div class="card-body">
-          
-            <h5 class="card-title"><%= day.date %> </h5>
+          <% if (profile._id.equals(user?.profile._id)) { %>
+            <form action="/days/<%= day._id %>?_method=DELETE" method="post">
+              <button type="submit" class="delete-btn">X</button>
+            </form>
+            <% } %>
+            <h5 class="card-title"><%= day.date.toDateString() %> </h5>
             <h6 class="card-subtitle mb-2 text-muted">Breakfast:</h6>
             <p class="card-text"><%= day.breakfast.name %></p>
             <h6 class="card-subtitle mb-2 text-muted">Lunch:</h6>
