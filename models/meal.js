@@ -14,7 +14,7 @@ const mealSchema = new Schema({
   }, 
   description: {
     type: String,
-    required:true,
+    // required:true,
   },
   creator: { type: Schema.Types.ObjectId, ref: 'Profile' },
 }, {

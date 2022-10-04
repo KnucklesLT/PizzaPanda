@@ -1,5 +1,6 @@
 import { Day } from "../models/day.js"
 import { Meal } from "../models/meal.js"
+import { Profile } from "../models/profile.js"
 
 function index(req,res) {
   Day.find({}).sort({ date : 1})
@@ -15,9 +16,23 @@ function index(req,res) {
   })
 }
 
+function newPlan(req, res) {
+  Meal.find({})
+  .then(meals => {
+    res.render('days/new', {
+      title: 'Add a Plan',
+      meals
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
 
 
 
 export{
-  index
+  index,
+  newPlan as new,
 }

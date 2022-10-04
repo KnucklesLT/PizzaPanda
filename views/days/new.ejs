@@ -1,0 +1,60 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+
+  <h1>Add a Meal Plan</h1>
+  
+  <% if (user) { %>
+    <form action="/days" method="post" autocomplete="off">
+      <label>
+        Date:
+        <input type="date" name="date" >
+      </label>
+      <label>
+        Breakfast:
+        <select name="breakfast">
+          <% meals.forEach(meal => { %>
+            <% if (meal.mealType === 'Breakfast') { %>
+              <option value="meal._id"><%= meal.name %></option>             
+            <% } %>
+          <% }) %>
+        </select>
+      </label>
+      <label>
+        Lunch:
+        <select name="lunch">
+          <% meals.forEach(meal => { %>
+            <% if (meal.mealType === 'Lunch') { %>
+              <option value="meal._id"><%= meal.name %></option>             
+            <% } %>
+          <% }) %>
+        </select>
+      </label>
+      <label>
+        Dinner:
+        <select name="dinner">
+          <% meals.forEach(meal => { %>
+            <% if (meal.mealType === 'Dinner') { %>
+              <option value="meal._id"><%= meal.name %></option>             
+            <% } %>
+          <% }) %>
+        </select>
+      </label>
+      <label>
+        Snack:
+        <select name="snack">
+          <% meals.forEach(meal => { %>
+            <% if (meal.mealType === 'Snack') { %>
+              <option value="meal._id"><%= meal.name %></option>             
+            <% } %>
+          <% }) %>
+        </select>
+      </label>
+      <button type="submit" class="btn btn-danger">Add Plan</button>
+    </form>
+  <% } %>
+
+</main>
+
+<%- include('../partials/footer') %>
