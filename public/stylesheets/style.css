@@ -70,9 +70,6 @@ label {
   font-weight: bold;
 }
 
-section {
-  padding: 50px;
-}
 
 a {
   color: red;
@@ -133,7 +130,6 @@ form * {
 }
 
 #card-container{
-  /* display: flex; */
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;

@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/index.css" />
 <%- include('../partials/nav') %>
 
 <main>
@@ -6,7 +7,7 @@
   <h1>Your Daily Meal Plan</h1>
   <h3><a href="/days/new">Add a Day</a></h3>
   
-  <section class="card">
+  <div class="card-container">
     <% profile.plan.forEach(day => { %>
       <div id="card-container" class="card" style="width: 18rem;">
         <div class="card-body">
@@ -15,7 +16,7 @@
               <button type="submit" class="delete-btn">X</button>
             </form>
             <% } %>
-            <h5 class="card-title"><%= day.date.toDateString() %> </h5>
+            <h5 class="card-title" <%- day.date < new Date() ? 'style="color: red;"' : ''%>><%= day.date.toDateString() %> </h5>
             <h6 class="card-subtitle mb-2 text-muted">Breakfast:</h6>
             <p class="card-text"><%= day.breakfast.name %></p>
             <h6 class="card-subtitle mb-2 text-muted">Lunch:</h6>
@@ -32,7 +33,7 @@
         <% } %>
       </div>
     <% }) %>
-  </section>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>
