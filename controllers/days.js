@@ -99,38 +99,19 @@ function edit(req,res) {
   })
 }
 
-// function edit(req,res) {
-//   Profile.findById(req.user.profile._id)
-//   .populate({
-//     path: 'plan', 
-//     model: 'Day',
-//     options:{
-//       sort: {
-//         date: 1
-//       }
-//     },
-//     populate: {
-//       path: 'breakfast lunch dinner snack',
-//       model: 'Meal'
-//     }
-//   })
-//   .find({ plan: {_id : req.params.id}})
-//   .then(plan => {
-//     console.log(plan)
-//       Meal.find({})
-//       .then(meals => {
-//         res.render('days/edit', {
-//           title: "Edit Plan",
-//           plan,
-//           meals,
-//         })
-//     })
-//   })
-//   .catch(error => {
-//     console.log(error)
-//     res.redirect('/')
-//   })
-// }
+function update(req,res) {
+  Day.findById(req.params.id)
+  .then(day => {
+    day.updateOne(req.body)
+    .then(updatedDay => {
+      res.redirect('/days')
+    })
+  })
+  .catch (error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
 
 export{
   index,
@@ -138,4 +119,5 @@ export{
   create,
   deletePlan as delete,
   edit,
+  update,
 }
