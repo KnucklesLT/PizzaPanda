@@ -5,8 +5,31 @@ Welcome to PizzaPanda Portion Planner, where you can contribute meals to the com
 ## Getting Started:
 Thinking of meal planning?  Give **[PizzaPanda](pizza-panda.fly.dev)** a try!
 
-## Planning Material
+## Planning Material:
 
 Trello Board
 
-[<img src="imgReadme/../public/imgReadme/TrelloBoard.png" width="500" height="400"](TrelloBoard.png)
+![](public/imgReadme/TrelloBoard.png)
+
+Main Page
+
+![](public/imgReadme/PizzaPandaMainPage.png)
+
+## Technology Implemented:
+1. Node.js
+2. HTML
+3. CSS
+4. GetBootStrap.com
+5. MongoDB
+6. Mongoose
+7. Javascript
+
+## Credits:
+**[DALL-E](https://labs.openai.com/)**   
+**[DreamStudio](https://beta.dreamstudio.ai/dream)**   
+
+
+## Next Steps:
+1. Add reviews to meals
+2. Add ratings to meals
+3. Ability to Add an image to the created meals.
