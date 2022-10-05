@@ -25,6 +25,11 @@
             <h6 class="card-subtitle mb-2 text-muted">Snack:</h6>
             <p class="card-text"><%= day.snack.name %></p>
         </div>
+        <% if (profile._id.equals(user?.profile._id)) { %>
+          <a href="/days/<%= day._id %>/edit" class="card-link btn">
+            <button class="btn">Edit this Plan</button>
+          </a>
+        <% } %>
       </div>
     <% }) %>
 </main>

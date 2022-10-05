@@ -76,10 +76,66 @@ function deletePlan(req,res) {
   })
 }
 
+
+function edit(req,res) {
+  Day.findById(req.params.id)
+  .populate('breakfast lunch dinner snack')
+  .then(day => {
+    const dt = day.date
+    const planDate = dt.toISOString().slice(0,16)
+      Meal.find({})
+      .then(meals => {
+        res.render('days/edit', {
+          title: "Edit Plan",
+          day,
+          planDate,
+          meals,
+        })
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+// function edit(req,res) {
+//   Profile.findById(req.user.profile._id)
+//   .populate({
+//     path: 'plan', 
+//     model: 'Day',
+//     options:{
+//       sort: {
+//         date: 1
+//       }
+//     },
+//     populate: {
+//       path: 'breakfast lunch dinner snack',
+//       model: 'Meal'
+//     }
+//   })
+//   .find({ plan: {_id : req.params.id}})
+//   .then(plan => {
+//     console.log(plan)
+//       Meal.find({})
+//       .then(meals => {
+//         res.render('days/edit', {
+//           title: "Edit Plan",
+//           plan,
+//           meals,
+//         })
+//     })
+//   })
+//   .catch(error => {
+//     console.log(error)
+//     res.redirect('/')
+//   })
+// }
+
 export{
   index,
   newPlan as new,
   create,
   deletePlan as delete,
-
+  edit,
 }
