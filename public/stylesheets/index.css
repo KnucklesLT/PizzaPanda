@@ -34,7 +34,7 @@
 
 .card-title {
   font-size: 24px;
-  margin-top: 20px;
+  margin-top: 10px;
   /* background-color: red; */
   color: rgb(79, 79, 79);
 }
@@ -45,7 +45,7 @@
 .card-title-food{
   background-color: red;
   color: white;
-  padding: 10px;
+  padding: 5px;
   font-size: 24px;
   text-align: center;
 }
@@ -56,6 +56,18 @@
   border-radius: 5%;
 }
 
-form.card-title-food{
-  display: flex;
+form.card-title-food,
+form{
+  float: right;
+  margin: 0;
+  padding: 0;
 }
+
+.card-link{
+  display: block;
+  position: absolute;
+  margin: auto;
+  bottom: 1px;
+  right: 1px;
+}
+

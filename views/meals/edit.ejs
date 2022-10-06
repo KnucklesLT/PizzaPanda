@@ -1,9 +1,11 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/index.css" />
 <%- include('../partials/nav') %>
+<main>
 
-<section >
   <h2>Edit Meal</h2>
-  <form class="pure-form pure-form-aligned" action="/meals/<%= meal._id %>?_method=PUT" method="post" autocomplete="off">
+  
+  <form class="edit-form" action="/meals/<%= meal._id %>?_method=PUT" method="post" autocomplete="off">
     <label>
       Name:
       <input type="text" name="name"  value="<%= meal.name %> ">
@@ -24,6 +26,7 @@
     </label>
     <button type="submit" class="btn btn-danger">Edit Meal</button>
   </form>
-</section>
+  
+</main>
 
 <%- include('../partials/footer') %>

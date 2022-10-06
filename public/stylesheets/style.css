@@ -64,8 +64,9 @@ ul {
   list-style-type: none;
 }
 
-p, label, li, button, input {
+p, label, li, button, input, h6 {
   font-size: 18px;
+  padding: 2px;
 }
 
 label {
