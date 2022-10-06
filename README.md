@@ -25,6 +25,8 @@ Main Page
 6. Mongoose
 7. Javascript
 8. Heropatterns.com
+9. Express
+10. EJS
 
 ## Credits:
 **[DALL-E](https://labs.openai.com/)**   
