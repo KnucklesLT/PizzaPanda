@@ -23,6 +23,7 @@ Main Page
 5. MongoDB
 6. Mongoose
 7. Javascript
+8. Heropatterns.com
 
 ## Credits:
 **[DALL-E](https://labs.openai.com/)**   

@@ -8,14 +8,14 @@
   <h2>Added by our wonderful members!</h2>
   <div class="card-container">
     <% meals.forEach(meal => { %>
-      <div id="card-container" class="card" style="width: 18rem;">
-        <div class="card-body">
+      <div id="card-food-container" class="card" style="width: 18rem;">
+        <div class="card-body" style="background-color: white;">
           <% if (meal.creator.equals(user?.profile._id)) { %>
-            <form action="/meals/<%= meal._id %>?_method=DELETE" method="post">
+            <form class="card-title-food" action="/meals/<%= meal._id %>?_method=DELETE" method="post" >
               <button type="submit" class="delete-btn">X</button>
             </form>
             <% } %>
-            <h5 class="card-title"><%= meal.name %> </h5>
+            <h5 class="card-title-food"><%= meal.name %> </h5>
             <h6 class="card-subtitle mb-2 text-muted"><%= meal.mealType %> </h6>
             <p class="card-text"><%= meal.description %></p>
             <p class="card-subtitle mb-2 text-muted">By: <%= meal.creator.name %></p>
