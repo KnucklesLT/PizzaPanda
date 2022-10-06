@@ -22,7 +22,7 @@
             <p class="card-subtitle mb-2 text-muted">By: <%= meal.creator.name %></p>
           <% if (meal.creator.equals(user?.profile._id)) { %>
             <a href="/meals/<%= meal._id %>/edit" class="card-link btn">
-              <button class="btn">Edit this Meal</button>
+              <button class="btn">Edit Meal</button>
             </a>
           <% } %>
         </div>
