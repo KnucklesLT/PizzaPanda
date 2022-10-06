@@ -6,6 +6,7 @@ Welcome to PizzaPanda Portion Planner, where you can contribute meals to the com
 Thinking of meal planning?  Give **[PizzaPanda](https://pizza-panda.fly.dev/)** a try!
 
 ## Planning Material:
+View my **[Trello Board](https://trello.com/b/24iexkGD/pizza-panda-meal-planner)**.    
 
 Trello Board
 
