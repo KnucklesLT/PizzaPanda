@@ -49,6 +49,7 @@ section{
 h1 {
   margin: 10px;
   font-size: 36px;
+  text-shadow: 1px 1px red;
 }
 
 h2 {

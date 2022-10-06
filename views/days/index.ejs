@@ -9,7 +9,7 @@
   
   <div class="card-container">
     <% profile.plan.forEach(day => { %>
-      <div id="card-container" class="card" style="width: 18rem;">
+      <div class="card" style="width: 18rem;">
         <div class="card-body">
           <% if (profile._id.equals(user?.profile._id)) { %>
             <form action="/days/<%= day._id %>?_method=DELETE" method="post">
@@ -17,6 +17,7 @@
             </form>
             <% } %>
             <h5 class="card-title" <%- day.date < new Date() ? 'style="color: red;"' : ''%>><%= day.date.toDateString() %> </h5>
+            <hr>
             <h6 class="card-subtitle mb-2 text-muted">Breakfast:</h6>
             <p class="card-text"><%= day.breakfast.name %></p>
             <h6 class="card-subtitle mb-2 text-muted">Lunch:</h6>
