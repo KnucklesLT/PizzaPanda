@@ -32,7 +32,7 @@ Main Page
 
 
 ## Next Steps:
-1. Add reviews to meals
-2. Add ratings to meals
+1. Add reviews to meals.
+2. Add ratings to meals.
 3. Ability to Add an image to the created meals.
-4. Add check so user cannot add a plan on a specific day if the day already exists
+4. Add check so user cannot add a plan on a specific day if the day already exists.
