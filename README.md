@@ -1,4 +1,4 @@
-# PizzaPanda
+# [PizzaPanda](https://pizza-panda.fly.dev/)
 
 Welcome to PizzaPanda Portion Planner, where you can contribute meals to the community and use those meals to help meal plan your days!  When I first started this project, all I had was the name (PizzaPanda, gotta love alliteration) and an AI generated image of a panda eating a pizza in the style of Vincent Van Gogh.  After a brainstorming session with my instructors, I landed on meal planning (again for the alliteration).  Thus PizzaPanda Portion Planner was born!
 
