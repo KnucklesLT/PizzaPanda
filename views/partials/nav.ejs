@@ -5,6 +5,18 @@
 <body>
   <nav>
     <img id="logo" src="/img/PizzaPandaLogo.png" alt="PizzaPandaLogo">
+    <script>
+      const logoAudio = new Audio('/audio/Panda.mp3')
+      const logoClick = document.querySelectorAll("#logo")
+
+      logoClick.forEach(logo => {
+        logo.addEventListener('click', () => {
+          logoAudio.volume = .10
+          logoAudio.play()
+        })
+      })
+    </script>
+    
     <a href="/" class="right">Home</a>
     <a href="/meals" class="right">All Meals</a>
     <% if (user) { %>
